@@ -1,0 +1,15 @@
+preco_pass = float(input("Insira o preço da passagem: "))
+pass_reg = int(input("Insira o numero de passageiros regulares: "))
+pass_espec = int(input("Insira o numero de passageiros especiais: "))
+tem_exec = input("Tem executivo ? [S/N]")
+fatura_reg = float(preco_pass * pass_reg)
+fatura_espec = float((preco_pass * pass_espec) / 2 )
+if(tem_exec == "S" or tem_exec == "s"):
+    preco_exec = float(input("Insira o preço da passagem executiva: "))
+    pass_exec = int(input("Numero de passageiros executivos: "))
+    fatura_exec = float(preco_exec * pass_exec)
+    total = float(fatura_reg + fatura_espec + fatura_exec)
+    print("Faturamento total foi: %.2f" % total)
+else:
+    total = float(fatura_reg + fatura_espec)
+    print("Faturamento total foi: %.2f" % total)
